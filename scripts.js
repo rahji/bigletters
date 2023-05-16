@@ -13,11 +13,15 @@ window.addEventListener('DOMContentLoaded', function() {
 
     function updateFragment(text) {
         // Don't spam the browser history & strip query strings.
-        if (location.pathname !== '/') {
-            window.location.replace(location.origin + location.pathname + '#' + encodeURIComponent(text));
+        var url = '';
+        const str = location.href;
+        const idx = str.indexOf('#');
+        if (idx > 0) {
+            url = str.substring(0,idx);
         } else {
-            window.location.replace(location.origin + '/#' + encodeURIComponent(text));
-        }
+            url = str;
+        }        
+        window.location.replace(url = url + '#' + encodeURIComponent(text));
     }
 
     function updateTitle(text) {
