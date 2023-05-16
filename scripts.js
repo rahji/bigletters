@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', function() {
     function updateFragment(text) {
         // Don't spam the browser history & strip query strings.
         if (location.pathname !== '/') {
-            window.location.replace(location.origin + location.pathname + '/#' + encodeURIComponent(text));
+            window.location.replace(location.origin + location.pathname + '#' + encodeURIComponent(text));
         } else {
             window.location.replace(location.origin + '/#' + encodeURIComponent(text));
         }
