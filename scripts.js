@@ -13,7 +13,11 @@ window.addEventListener('DOMContentLoaded', function() {
 
     function updateFragment(text) {
         // Don't spam the browser history & strip query strings.
-        window.location.replace(location.origin + '/#' + encodeURIComponent(text));
+        if (location.pathname !== '/') {
+            window.location.replace(location.origin + location.pathname + '/#' + encodeURIComponent(text));
+        } else {
+            window.location.replace(location.origin + '/#' + encodeURIComponent(text));
+        }
     }
 
     function updateTitle(text) {
