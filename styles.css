@@ -124,8 +124,8 @@ input::-webkit-input-placeholder {
 }
 
 .text {
-    border-radius: 10px;
-    border: 1px solid #eee;
+    /* border-radius: 10px;
+    border: 1px solid #eee; */
     counter-reset: num-chars;
     overflow: hidden;
 }
